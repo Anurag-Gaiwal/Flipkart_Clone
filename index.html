@@ -38,6 +38,88 @@
     <link href="css/contactus.css" rel="stylesheet">
 
     <style>
+        /* Input container */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Input field */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Floating label */
+.input-label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+/* Move label up when input is focused or has value */
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+    top: -10px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* Underline for input */
+.underline {
+    height: 2px;
+    background: #f90;
+    margin-top: 5px;
+    transition: all 0.2s ease;
+}
+
+/* Focus effect on input */
+.input-field:focus ~ .underline {
+    background: #ff5722;
+}
+
+/* Terms and link styles */
+.terms {
+    font-size: 14px;
+    color: #555;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Button styles */
+.btn-container {
+    text-align: center;
+}
+
+.btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f90;
+}
+
            body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
@@ -257,7 +339,7 @@
         </script>
       
   
-    <div id="divA" class="popup-container">
+      <div id="divA" class="popup-container">
         <div class="signupin">
             <div class="leftpanal">
                 <h4>Login</h4>
@@ -266,28 +348,27 @@
             <div class="rightSignuppanal">
                 <span class="close-btn" id="close-btn">&times;</span>
                 <form autocomplete="on">
-                    <div class="I-qZ4M vLRlQb">
-                        <input autocomplete="off" id="inputsin" type="text" class="r4vIwl BV+Dqf" value=""
-                            required="" />
-                        <label class="Gq-80a" id="inputsin"><span>Enter Email/Mobile </span></label>
+                    <div class="input-container">
+                        <input autocomplete="off" id="inputsin" type="text" class="input-field" required="" />
+                        <label class="input-label" for="inputsin">Enter Email/Mobile</label>
                         <div class="underline"></div>
                     </div>
-                    <div class="EpHS0A">By continuing, you agree to Flipkart's
-                        <a class="c9RDXR" target="_blank" href="../pages/terms/">Terms of Use</a> and
-                        <a class="c9RDXR" target="_blank" href="../pages/privacypolicy/index.html">Privacy Policy</a>.
+                    <div class="terms">
+                        By continuing, you agree to Flipkart's
+                        <a class="link" target="_blank" href="../pages/terms/">Terms of Use</a> and
+                        <a class="link" target="_blank" href="../pages/privacypolicy/index.html">Privacy Policy</a>.
                     </div>
-                    <div class="LSOAQH mt-2">
-                        <button class="QqFHMw twnTnD _7Pd1Fp">Request OTP</button>
+                    <div class="btn-container mt-2">
+                        <button class="btn">Request OTP</button>
                     </div>
-                    <div class="ZJ3AS1 d-flex justify-content-center mt-4">
-
-                        <a class="azBkHf" href="account/login-signup.html" id="buttonA">New to Flipkart? Create an account</a>
-
+                    <div class="new-account d-flex justify-content-center mt-4">
+                        <a class="link" href="account/login-signup.html">New to Flipkart? Create an account</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
